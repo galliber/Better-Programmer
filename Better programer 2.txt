@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class BetterProgrammerTask {
+
+    public static String getBinaryRepresentation(int n) 
+    {
+        /*
+         Please implement this method to
+         return a String with the binary representation of any number n, where n >= 0.
+         Example: "101" is a binary representation of 5
+        */
+    	String str=String.valueOf(n);
+
+    	int j=0;
+		int h=0;
+		for(int i=0;i<str.length();i++)
+    	{
+    		if(str.charAt(i)=='1')
+    		{
+    	    	j=1;
+    			for(int k=1;k<i+1;k++)
+    			{
+    				j=j*2;
+    			}
+    			h=h+j;
+    		}
+    	}
+		return String.valueOf(h);
+    }
+    public static void main(String[]args)
+    {
+    	Scanner sc=new Scanner(System.in);
+    	System.out.println("Enter a binary number(lenght of an int)");
+    	int n=sc.nextInt();
+    	System.out.println("The binary number in decymal: "+getBinaryRepresentation(n));
+    	
+    }
+}
